@@ -40,14 +40,13 @@ class PlayState extends Phaser.State {
         this.mapLayer.resizeWorld();
 
         // para cada nova camada: criar camada e definir tiles com colisao
-        this.trapsLayer = this.map.createLayer('Traps');
+//        this.trapsLayer = this.map.createLayer('Traps');
 //        this.map.setCollision([29], true, 'Traps');
     }
 
     createCoins() {
         this.coins = game.add.group();
-        // 45 eh o indice do tile
-        this.map.createFromObjects('Object Layer 1', 45, 'coin', 0, true, false, this.coins, Coin)
+        this.map.createFromObjects('Object Layer 1', 26, 'coin', 0, true, false, this.coins, Coin)
     }
 
     cretateHud() {
@@ -91,10 +90,10 @@ class PlayState extends Phaser.State {
 
         this.createMap();
         this.createPlayer();
-//        this.createCoins(); // deve ser apos o createMap()
+        this.createCoins(); // deve ser apos o createMap()
         this.cretateHud();
 //        this.trophy = new Trophy(game);
-        game.add.existing(this.trophy);
+//        game.add.existing(this.trophy);
     }
 
     takeScreenShot() {
@@ -127,9 +126,9 @@ class PlayState extends Phaser.State {
         // destroi permanentemente o objeto
         coin.destroy()
         // esconde o objeto e desliga colisao (para reuso futuro)
-        //coin.kill() 
+//        coin.kill() 
         this.addScore(coin.points);
-        this.trophy.show('first death');
+//        this.trophy.show('first death');
     }
 
     playerDied() {
