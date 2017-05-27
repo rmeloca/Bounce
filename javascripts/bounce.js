@@ -1,6 +1,6 @@
 data = {
-    station: "rmeloca",
-    operation: "ADD_PLAYER",
+    id: "rmeloca",
+    op: "ADD_PLAYER",
     data: ""
 };
 ServerComm.ajaxPost(data, function () {});
