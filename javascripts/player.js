@@ -5,12 +5,8 @@ class Player extends Phaser.Sprite {
         this.keys = cursors;
         this.game.physics.enable(this, Phaser.Physics.ARCADE);
         this.body.collideWorldBounds = true;
-        this.body.setSize(20, 32, 5, 16);
+        this.body.setSize(16, 16, 16, 16);
         this.anchor.setTo(0.5, 0.5);
-
-        this.animations.add('walk', [2, 1, 2, 3], 10, true);
-        this.animations.add('jump', [3], 10, true);
-        this.animations.add('idle', [2], 10, true);
 
         let jumpButton = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
         jumpButton.onDown.add(this.jump, this);

@@ -6,7 +6,7 @@ class PlayState extends Phaser.State {
         game.load.tilemap('level1', `${dir}floor_p_0.json`, null, Phaser.Tilemap.TILED_JSON);
         game.load.image('ground_1x1', `${dir}ground_1x1.png`);
 
-        game.load.spritesheet('dude', `${dir}dude.png`, 32, 48);
+        game.load.spritesheet('dude', `${dir}ball.png`, 32, 32);
         game.load.image('background', `${dir}background4.png`);
 
         game.load.spritesheet('coin', `${dir}coin.png`, 32, 32);
@@ -36,7 +36,7 @@ class PlayState extends Phaser.State {
         // deve ter o mesmo nome usado na camada criada no Tiled Editor
         this.mapLayer = this.map.createLayer('Tile Layer 1');
         // os indices sao os mesmos para o tiles no Tiled Editor, acrescidos em 1
-        this.map.setCollisionBetween(1, 11, true, 'Tile Layer 1');
+        this.map.setCollisionBetween(1, 25, true, 'Tile Layer 1');
         this.mapLayer.resizeWorld();
 
         // para cada nova camada: criar camada e definir tiles com colisao
